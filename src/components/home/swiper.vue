@@ -41,7 +41,6 @@
   width: 100%;
   padding-bottom: 36%;
   background-color: #eee;
-  
   .swiper-img{
     width: 100%;
     height: 100%;
