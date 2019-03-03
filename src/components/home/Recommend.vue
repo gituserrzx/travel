@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="title">热销推荐</div>
-    <ul>
-      <li class="item">
-        <img class="item-img" src="" alt="">
+    <ul >
+      <li class="item" v-for="item of recommendList" :key="item.id">
+        <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
-          <p class="item-title"></p>
-          <p class="item-desc"></p>
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
       </li>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-
+  props: [ 'recommendList' ]
 }
 </script>
 
@@ -46,6 +46,7 @@ export default {
       .item-desc{
         line-height: .4rem;
         color: #ccc;
+        font-size: .14rem;
         @include ellipsis();
         }
       .item-button{

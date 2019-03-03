@@ -4,9 +4,9 @@
         <swiper-slide  v-for="(page, i) of pages" :key="i">
           <div class="icon" v-for="item of page" :key="item.id">
             <div class="icon-img">
-              <img class='img-content' src='http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg'/>
+              <img class='img-content' :src='item.imgUrl'/>
             </div>
-            <p class="title">热门景点</p>
+            <p class="title">{{item.desc}}</p>
           </div>
         </swiper-slide>
       </swiper>
@@ -16,58 +16,12 @@
 <script>
     export default {
       name: 'HomeIcons',
+      props: [ 'iconList' ],
       data () {
         return {
           swiperOption: {
-            loop: true
-          },
-          iconList: [
-            {
-              id: '001',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热景点热门景点热门景点'
-            },
-            {
-              id: '002',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '003',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '004',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '005',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '006',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '007',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '008',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            },
-            {
-              id: '009',
-              imgUrl: 'http://img1.imgtn.bdimg.com/it/u=3428345551,1052907220&fm=26&gp=0.jpg',
-              title: '热门景点'
-            }
-          ]
+            autoplay: false
+          }
         }
       },
       computed: {
@@ -127,5 +81,4 @@
       }
     }
   }
-  
 </style>
