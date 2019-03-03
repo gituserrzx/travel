@@ -7,10 +7,14 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+  
+      <div class="header-right">
+        <router-link :to="{name: 'city'}">
+        城市
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+        </router-link>
+      </div>
+  
   </div>
 </template>
 
@@ -20,9 +24,12 @@
 
 <style lang="scss" scoped>
   @import 'assets/varibles.scss';
+  a{
+    color: white;
+  }
   .header{
     display: flex;
-    line-height: .86rem;
+    line-height: $headerHeight;
     color: #fff;
     background-color: $bgColor;
     .header-left{
