@@ -4,7 +4,6 @@
     <router-link :to="{name: 'home'}">
       <div class="iconfont icon">&#xe624;</div>
     </router-link>
-    
   </div>
 </template>
 
@@ -34,5 +33,4 @@
     font-szie: .4rem;
   }
   }
-  
 </style>

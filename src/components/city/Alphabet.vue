@@ -1,16 +1,15 @@
 <template>
-  <ul class="list">
-    <li class="item">1</li>
-    <li class="item">2</li>
-    <li class="item">2</li>
-    <li class="item">2</li>
-    <li class="item">2</li>
-    <li class="item">2</li>
-  </ul>
+  <div>
+    <div class="list"  >
+      <a :href="'#'+ k" class="item" v-for="(v, k) of alist" :key="k">{{k}}</a>
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {}
+  export default {
+    props: ['alist']
+  }
 </script>
 
 <style lang="scss" scoped>

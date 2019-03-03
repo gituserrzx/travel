@@ -15,79 +15,22 @@
       <div class="title border-topbottom">
         热门城市
       </div>
-      <div class="button-list">
-        <div class="buttonWrap">
-          <div class="button">北京</div>
-        </div>
-        <div class="buttonWrap">
-          <div class="button">北京</div>
-        </div>
-        <div class="buttonWrap">
-          <div class="button">北京</div>
-        </div>
-        <div class="buttonWrap">
-          <div class="button">北京</div>
-        </div>
-        <div class="buttonWrap">
-          <div class="button">北京</div>
+      <div class="button-list"  >
+        <div class="buttonWrap" v-for="item of hotList"
+             :key="item.id">
+          <div class="button" >
+            {{item.name}}
+          </div>
         </div>
       </div>
     </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-        <div class="cityTable">
+    <div class="area"  v-for="(v,k) of cityList" :key="k">
+      <div class="title border-topbottom" :id="k">{{k}}</div>
+        <div class="cityTable" v-for="item of v" :key="item.id">
             <div class="city border-bottom">
-              阿姆斯特朗
+              {{item.name}}
             </div>
-          <div class="city border-bottom">
-            阿姆斯特朗
-          </div>
-          <div class="city border-bottom">
-            阿姆斯特朗
-          </div>
         </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="cityTable">
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-      </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="cityTable">
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-      </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="cityTable">
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-        <div class="city border-bottom">
-          阿姆斯特朗
-        </div>
-      </div>
     </div>
     </div>
   </div>
@@ -96,7 +39,8 @@
 <script>
   import BScroll from 'better-scroll'
     export default {
-    mounted(){
+    props: ['cityList', 'hotList'],
+    mounted () {
       this.scroll = new BScroll(this.$refs.wrapper)
     }
     }
