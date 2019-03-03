@@ -2,13 +2,13 @@
     <div>
       <div class="title">周末去哪儿</div>
       <ul>
-        <li class="item">
+        <li class="item" v-for="item of weekendList" :key="item.id">
           <div class="item-img-wrapper">
-            <img class="item-img" src="" alt="">
+            <img class="item-img" :src="item.imgUrl" alt="">
           </div>
           <div class="item-info">
-            <div class="item-title"></div>
-            <div class="item-desc"></div>
+            <div class="item-title">{{item.title}}</div>
+            <div class="item-desc">{{item.desc}}</div>
           </div>
         </li>
       </ul>
@@ -17,6 +17,7 @@
 
 <script>
     export default {
+      props: [ 'weekendList' ]
     }
 </script>
 
@@ -46,6 +47,7 @@
       line-height: .4rem;
       color: #ccc;
       @include ellipsis;
+      font-size: .14rem
     }
   }
 </style>
