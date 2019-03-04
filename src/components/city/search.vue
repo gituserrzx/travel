@@ -7,7 +7,7 @@
       <div>
       <div class="item" v-for="item of itemList" :key="item.id">{{item.name}}</div>
       </div>
-      <div class="nodata" v-show="noMoreData">没有更多的信息</div>
+      <div class="nodata" v-show="noMoreData">没有匹配的信息</div>
     </div>
   </div>
 </template>

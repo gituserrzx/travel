@@ -30,7 +30,6 @@
         api.getCity().then((res) => {
             const data = res.data
             if (data.ret && data.data) {
-              console.log(data.data)
               this.cityList = data.data.cities
               this.hotCity = data.data.hotCities
             }

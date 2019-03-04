@@ -7,7 +7,7 @@
       </div>
       <div class="button-list">
         <div class="buttonWrap">
-          <div class="button">北京</div>
+          <div class="button">{{$store.state.city}}</div>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <div class="button-list"  >
         <div class="buttonWrap" v-for="item of hotList"
              :key="item.id">
-          <div class="button" >
+          <div class="button" @click='handleChange(item.name)' >
             {{item.name}}
           </div>
         </div>
@@ -27,7 +27,7 @@
     <div class="area"  v-for="(v,k) of cityList" :key="k">
       <div class="title border-topbottom" :id="k">{{k}}</div>
         <div class="cityTable" v-for="item of v" :key="item.id">
-            <div class="city border-bottom">
+            <div class="city border-bottom" @click='handleChange(item.name)'>
               {{item.name}}
             </div>
         </div>
@@ -42,7 +42,13 @@
     props: ['cityList', 'hotList'],
     mounted () {
       this.scroll = new BScroll(this.$refs.wrapper)
-    }
+    },
+      methods: {
+        handleChange (city) {
+          this.$store.commit('changeCity', city)
+          this.$router.push({name: 'home'})
+        }
+      }
     }
 </script>
 
