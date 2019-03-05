@@ -28,8 +28,8 @@
         handleScrollTop () {
           const top = document.documentElement.scrollTop
           if (top > 50) {
-            if (top < 140){
-              let opacity = top / 140;
+            if (top < 140) {
+              let opacity = top / 140
               opacity = opacity > 1 ? 1 : opacity
               this.styleShow = {
                 opacity
@@ -39,13 +39,12 @@
           } else {
             this.isShow = true
           }
-          
         }
       },
       activated () {
         window.addEventListener('scroll', this.handleScrollTop)
       },
-      deactivated() {
+      deactivated () {
         window.removeEventListener('scroll', this.handleScrollTop)
       }
     }

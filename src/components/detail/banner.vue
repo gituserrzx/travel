@@ -1,11 +1,11 @@
 <template>
-  <div class="banner">
-    <img class="img-content" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" alt="">
+  <div class="banner" >
+    <img class="img-content" :src="bannerImg" alt="">
     <div class="info">
-      <div class="title">净土6666</div>
+      <div class="title">{{this.sightName}}</div>
       <div class="number">
         <span class="iconfont">&#xe692;</span>
-        66
+        {{this.gallaryImgs.length}}
       </div>
     </div>
   </div>
@@ -13,6 +13,7 @@
 
 <script>
     export default {
+      props: ['bannerImg', 'sightName', 'gallaryImgs']
     }
 </script>
 

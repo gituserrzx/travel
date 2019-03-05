@@ -6,8 +6,11 @@ function getCity () {
 function getIndex () {
   return axios.get('/api/index.json')
 }
-
+function getDetail (params) {
+  return axios.get('api/detail.json', params)
+}
 export default {
   getCity,
-  getIndex
+  getIndex,
+  getDetail
 }

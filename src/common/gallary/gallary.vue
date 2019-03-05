@@ -2,12 +2,12 @@
   <div class="gallary" @click="closeGallary">
     <div class="content">
       <swiper :options="swiperOption" >
-        <swiper-slide  >
-            <img  class="img-content" src="http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_r_800x800_6360f514.jpg" alt="">
+        <swiper-slide v-for="item of gallaryImgs" :key="item" >
+            <img  class="img-content"  :src="item" alt="">
         </swiper-slide>
-        <swiper-slide >
-            <img  class="img-content" src="http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_r_800x800_6360f514.jpg" alt="">
-        </swiper-slide>
+        <!--<swiper-slide >-->
+            <!--<img  class="img-content" src="http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_r_800x800_6360f514.jpg" alt="">-->
+        <!--</swiper-slide>-->
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
     </div>
@@ -26,6 +26,7 @@
           }
         }
       },
+      props: ['gallaryImgs'],
       methods: {
         closeGallary () {
           this.$emit('change')
