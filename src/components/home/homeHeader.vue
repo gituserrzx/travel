@@ -48,7 +48,7 @@
       padding-left: .2rem;
     }
     .header-right {
-      width: 1.24rem;
+      width: 1.44rem;
       float: right;
       text-align: center;
     }
